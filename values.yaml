@@ -1,0 +1,12 @@
+deployment:
+  replicas: 3
+  image: shayulmer/loadbalancer-tester
+  containerPort: 80
+service:
+  protocol: TCP
+  port: 80
+backendConfig:
+  security_policy_name: "gke-ingress-example-security-policy"
+ingress:
+  domain: "gke-ingress-example.devoops.blog"
+  global_static_ip_address_name: "gke-ingress-example-address"
